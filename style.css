@@ -1,7 +1,13 @@
-
-*  {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+
 }
 
 a {
@@ -136,25 +142,64 @@ a {
 }
 
 
-/* Estilo do Banner */
+/* Estilos do banner */
 .banner {
-    display: flex;
-    position: relative;
- 
-
-	
+  display: flex;
+  position: relative;
+  margin: 0; /* Garantir que não há margem no container do banner */
+  padding: 0; /* Garantir que não há padding no container do banner */
 }
 
-.banner img { width: 100%;
-    width: 100%;
-    height: 70vh;
-    top: 0;
-    left: 0;
-   
-    object-position: top;
-  
+.banner img {
+  width: 100%;   /* A imagem ocupa toda a largura */
+  height: 70vh;   /* Define a altura como 70% da altura da viewport */
+  top: 0;
+  left: 0;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+  margin: 0;  /* Remover qualquer margem aplicada */
+  padding: 0; /* Remover qualquer padding aplicado */
+  display: block; /* Garante que a imagem seja exibida corretamente */
+}
 
+/* Estilo do texto sobre o banner */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
 
+.text h1 {
+  font-size: 2.5rem;
+}
+
+.text p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text h1 {
+    font-size: 1.5rem;
+  }
+
+  .text p {
+    font-size: 0.9rem;
+  }
 }
 
 .text {
@@ -197,21 +242,11 @@ a {
         font-size: 0.9rem;
     }
 }/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-  
-}
 
 /* Estilos do rodapé */
 .footer {
-    background-color: #000000;
+    background-color: #2b2b2b;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -383,4 +418,99 @@ a {
 /* Efeito de hover no link do Instagram */
 .card2 .card-link:hover {
   background-color: #0056b3; /* Tom mais escuro do botão */
+}
+/* Resetando margens e padding padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para o header */
+.header {
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed; /* Fixa o menu no topo */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que o menu fique por cima */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none; /* Mostre em dispositivos móveis com media queries */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-list li {
+  margin-left: 20px;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-list a:hover {
+  color: #f0a;
+}
+
+/* Estilos para o Banner */
+.banner {
+  margin-top: 60px; /* Espaço para o header fixo */
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .nav-list {
+      display: none;
+      flex-direction: column;
+  }
+
+  .nav-list li {
+      margin-left: 0;
+  }
+
+  .hamburger {
+      display: block;
+      background-color: #fff;
+      width: 30px;
+      height: 20px;
+      border: none;
+      cursor: pointer;
+  }
+
+  .hamburger:after {
+      content: '';
+      position: absolute;
+      background-color: #fff;
+      width: 100%;
+      height: 4px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+  }
 }
